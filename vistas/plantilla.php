@@ -46,10 +46,12 @@ if (isset($_GET["ruta"])) {
   if ($_GET["ruta"] == "usuarios") {
     include "modulos/".$_GET["ruta"].".php";
   }
+}else{
+  include "modulos/inicio/cajas.php";
 }
 
   
-    include "modulos/inicio/cajas.php";
+    
     include "modulos/footer.php";
 ?>
   
@@ -91,5 +93,11 @@ if (isset($_GET["ruta"])) {
 <script src="vistas/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="vistas/dist/js/demo.js"></script>
+
+
+<script src="vistas/js/plantilla.js"></script>
+
+
+
 </body>
 </html>

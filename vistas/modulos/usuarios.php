@@ -28,29 +28,46 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table class="table table-bordered table-striped tablas">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Usuario</th>
+                  <th>Perfil</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
-                <tbody>
+                <<tbody>      
+              
+              <?php
+                $item = null;
+                $valor = null;  
+            
+                $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                
+                // Verificar si $usuarios es un array antes de recorrerlo
+                if (is_array($usuarios)) {
+                  foreach($usuarios as $key => $valores){
+                    echo "
+                        <tr>
+                          <td>".($key+1)."</td>
+                          <td>".$valores["nombre"]."</td>
+                          <td>".$valores["usuario"]."</td>
+                          <td>".$valores["perfil"]."</td>
+                          <td>".$valores["fecha"]."</td>
 
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
-
-
-                </tbody>
-
+                          <td><button class='btn btn-primary'>Editar</button> </td>
+                        </tr>
+                      ";
+                  }
+                } else {
+                  echo "<tr><td colspan='5'>No hay usuarios para mostrar.</td></tr>";
+                }
+              ?>
+            
+            </tbody>            
                 
               </table>
             </div>
