@@ -1,5 +1,3 @@
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -20,55 +18,49 @@
       <div class="row">
         <div class="col-xs-12">
 
-
-         
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Panel Usuarios</h3>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuarios">
+                Agregar Usuario
+              </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered table-striped tablas">
                 <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Nombre</th>
-                  <th>Usuario</th>
-                  <th>Perfil</th>
-                  <th>Fecha</th>
-                  <th>Acciones</th>
-                </tr>
+                  <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Perfil</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                  </tr>
                 </thead>
-                <<tbody>      
-              
-              <?php
-                $item = null;
-                $valor = null;  
-            
-                $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-                
-                // Verificar si $usuarios es un array antes de recorrerlo
-                if (is_array($usuarios)) {
-                  foreach($usuarios as $key => $valores){
-                    echo "
-                        <tr>
-                          <td>".($key+1)."</td>
-                          <td>".$valores["nombre"]."</td>
-                          <td>".$valores["usuario"]."</td>
-                          <td>".$valores["perfil"]."</td>
-                          <td>".$valores["fecha"]."</td>
-
-                          <td><button class='btn btn-primary'>Editar</button> </td>
-                        </tr>
-                      ";
-                  }
-                } else {
-                  echo "<tr><td colspan='5'>No hay usuarios para mostrar.</td></tr>";
-                }
-              ?>
-            
-            </tbody>            
-                
+                <tbody>      
+                  <?php
+                    $item = null;
+                    $valor = null;  
+                    $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                    
+                    if (is_array($usuarios)) {
+                      foreach($usuarios as $key => $valores){
+                        echo "
+                            <tr>
+                              <td>".($key+1)."</td>
+                              <td>".$valores['nombre']."</td>
+                              <td>".$valores['usuario']."</td>
+                              <td>".$valores['perfil']."</td>
+                              <td>".$valores['fecha']."</td>
+                              <td><button class='btn btn-primary'>Editar</button></td>
+                            </tr>
+                          ";
+                      }
+                    } else {
+                      echo "<tr><td colspan='6'>No hay usuarios para mostrar.</td></tr>";
+                    }
+                  ?>
+                </tbody>            
               </table>
             </div>
             <!-- /.box-body -->
@@ -80,4 +72,63 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+  </div>
+
+  <!-- Modal para agregar usuario -->
+  <div id="modalAgregarUsuarios" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Contenido del modal -->
+      <div class="modal-content">
+        <form role="form" method="post" action="">
+          <!-- Cabecera del modal -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Agregar Usuario</h4>
+          </div>
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <div class="box-body">
+              <!-- Input para el nombre -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control input-lg" name="nombre" placeholder="Ingresar nombre" required>
+                </div>
+              </div>
+              <!-- Input para el usuario -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control input-lg" name="usuario" placeholder="Ingresar usuario" required>
+                </div>
+              </div>
+              <!-- Input para la contraseña -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                  <input type="password" class="form-control input-lg" name="password" placeholder="Ingresar contraseña" required>
+                </div>
+              </div>
+              <!-- Input para el perfil -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                  <input type="text" class="form-control input-lg" name="perfil" placeholder="Ingresar perfil" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pie del modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+          </div>
+        </form>
+
+        <?php
+        $crearUsuarios = new ControladorUsuarios();
+        $crearUsuarios -> ctrCrearUsuario();
+        ?>
+      </div>
+    </div>
   </div>
