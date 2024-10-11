@@ -52,7 +52,11 @@
                               <td>".$valores['usuario']."</td>
                               <td>".$valores['perfil']."</td>
                               <td>".$valores['fecha']."</td>
-                              <td><button class='btn btn-primary'>Editar</button></td>
+                              <td>
+                              <button class='btn btn-primary btnEditarUsuario' idUsuario=".$valores["id"]." data-toggle='modal' 
+                              data-target='#modalEditarUsuarios'>Editar</button>
+                              <button class='btn btn-danger'>Eliminar</button>
+                              </td>
                             </tr>
                           ";
                       }
@@ -128,6 +132,67 @@
         <?php
         $crearUsuarios = new ControladorUsuarios();
         $crearUsuarios -> ctrCrearUsuario();
+        ?>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- Modal para editar usuario -->
+  <div id="modalEditarUsuarios" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Contenido del modal -->
+      <div class="modal-content">
+        <form role="form" method="post" action="">
+          <!-- Cabecera del modal -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Editar Usuario</h4>
+          </div>
+          <!-- Cuerpo del modal -->
+          <div class="modal-body">
+            <div class="box-body">
+              <!-- Input para el nombre -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control input-lg" name="editarnombre" id="editarnombre">
+                </div>
+              </div>
+              <!-- Input para el usuario -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control input-lg" name="editarusuario" id="editarusuario">
+                </div>
+              </div>
+              <!-- Input para la contraseña -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                  <input type="password" class="form-control input-lg" name="editarpassword" id="editarPassword">
+                </div>
+              </div>
+              <!-- Input para el perfil -->
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                  <input type="text" class="form-control input-lg" name="editarperfil" id="editarPerfil">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pie del modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Editar Usuario</button>
+          </div>
+        </form>
+
+        <?php
+        $crearUsuarios = new ControladorUsuarios();
+        $crearUsuarios -> ctrEditarUsuario();
         ?>
       </div>
     </div>
