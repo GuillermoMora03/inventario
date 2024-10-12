@@ -153,32 +153,40 @@
           <!-- Cuerpo del modal -->
           <div class="modal-body">
             <div class="box-body">
+
+             <!-- Input para el id -->
+             <div class="form-group">
+                <div class="input-group">
+                  <input type="hidden" class="form-control input-lg" name="id" id="id">
+                </div>
+              </div>
+
               <!-- Input para el nombre -->
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control input-lg" name="editarnombre" id="editarnombre">
+                  <input type="text" class="form-control input-lg" name="editarNombre" id="editarnombre">
                 </div>
               </div>
               <!-- Input para el usuario -->
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control input-lg" name="editarusuario" id="editarusuario">
+                  <input type="text" class="form-control input-lg" name="editarUsuario" id="editarusuario">
                 </div>
               </div>
               <!-- Input para la contraseña -->
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                  <input type="password" class="form-control input-lg" name="editarpassword" id="editarPassword">
+                  <input type="password" class="form-control input-lg" name="editarPassword" >
                 </div>
               </div>
               <!-- Input para el perfil -->
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                  <input type="text" class="form-control input-lg" name="editarperfil" id="editarPerfil">
+                  <input type="text" class="form-control input-lg" name="editarPerfil" id="editarPerfil">
                 </div>
               </div>
             </div>

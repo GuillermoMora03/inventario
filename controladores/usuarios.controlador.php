@@ -40,7 +40,7 @@ class ControladorUsuarios {
      // Editar usuarios
      static public function ctrEditarUsuario() {
 
-        if (isset($_POST["usuario"])) {
+        if (isset($_POST["editarUsuario"])) {
 
             $tabla = "usuarios";
             
@@ -48,8 +48,9 @@ class ControladorUsuarios {
             $encriptar = password_hash($_POST["editarPassword"], PASSWORD_BCRYPT);
 
             $datos = array(
-                "nombre" => $_POST["editarnombre"],
-                "usuario" => $_POST["editarusuario"],
+                "id" => $_POST["id"],
+                "nombre" => $_POST["editarNombre"],
+                "usuario" => $_POST["editarUsuario"],
                 "password" => $encriptar,
                 "perfil" => $_POST["editarPerfil"]
             );

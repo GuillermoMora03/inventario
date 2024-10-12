@@ -25,11 +25,11 @@ class ModeloUsuarios{
 
     //mostrar usuarios
 
-    static public function mdlMostrarUsuarios($tabla, $item, $valor){
+    static public function mdlMostrarUsuarios($tabla, $datos, $valor){
 
-        if ($item !== null) {
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+        if ($datos !== null) {
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $datos = :$datos");
+            $stmt -> bindParam(":".$datos, $valor, PDO::PARAM_STR);
             $stmt -> execute();
             return $stmt -> fetch();
             
@@ -41,10 +41,10 @@ class ModeloUsuarios{
     }
 
 
-    static public function mdlEditarUsuarios(){
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, usuario = :usuario,
-         password = :password, perfil = :perfil WHERE usuario = :usuario");
+    static public function mdlEditarUsuarios($tabla, $datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, usuario = :usuario, password = :password, perfil = :perfil WHERE id = :id");
 
+        $stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
         $stmt-> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt -> bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
         $stmt -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
