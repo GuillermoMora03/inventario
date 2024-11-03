@@ -26,3 +26,22 @@ $(".tablas").on("click", ".btnEditarUsuario", function() {
         }
     });
 });
+
+$(".tablas").on("click", ".btnEliminarUsuario", function() {
+    var idUsuario = $(this).attr("idUsuario");
+    swal({
+        title: "¿Está seguro de borrar el usuario?",
+        text: "¡Si no lo está puede cancelar la acción!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, borrar usuario!"
+    }).then(function(result) { //Si se confirma la eliminación
+        if(result.value) {
+            window.location = "index.php?ruta=usuarios&idUsuario=" + idUsuario;
+        }
+    }); //Si se cancela la eliminación
+});
+

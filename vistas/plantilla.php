@@ -67,7 +67,7 @@ if (isset($_GET["ruta"])) {
 <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- DataTables -->
-<script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vistas/bower_components/sweetalert2/dist/sweetalert2.all.js"></script>
 <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 <!-- Morris.js charts -->

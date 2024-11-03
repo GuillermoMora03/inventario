@@ -22,9 +22,37 @@ class ControladorUsuarios {
             $respuesta = ModeloUsuarios::mdlGuardarUsuarios($tabla, $datos);
 
             if ($respuesta == "ok") {
-                echo "Usuario registrado correctamente";
+                echo "<script>
+                swall({
+                    type: 'success',
+                    title: 'El usuario ha sido guardado correctamente',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Cerrar',
+                    closeOnConfirm: false
+                }).then(function(result){
+
+                    if(result.value){
+                        window.location = 'usuarios';
+                    }
+
+                });
+            </script>";
             } else {
-                echo "Error al registrar usuario";
+                echo "<script>
+                    swall({
+                        type: 'error',
+                        title: 'El usuario no ha sido guardado correctamente',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar',
+                        closeOnConfirm: false
+                    }).then(function(result){
+
+                        if(result.value){
+                            window.location = 'usuarios';
+                        }
+
+                    });
+                </script>";
             }
         }
     }
@@ -58,9 +86,82 @@ class ControladorUsuarios {
             $respuesta = ModeloUsuarios::mdlEditarUsuarios($tabla, $datos);
 
             if ($respuesta == "ok") {
-                echo "Usuario modificado correctamente";
+                echo "<script>
+                    swall({
+                        type: 'success',
+                        title: 'El usuario ha sido modificado correctamente',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar',
+                        closeOnConfirm: false
+                    }).then(function(result){
+
+                        if(result.value){
+                            window.location = 'usuarios';
+                        }
+
+                    });
+                </script>";
             } else {
-                echo "Error al modificar usuario";
+                echo "<script>
+                    swall({
+                        type: 'error',
+                        title: 'El usuario no ha sido modificado correctamente',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar',
+                        closeOnConfirm: false
+                    }).then(function(result){
+
+                        if(result.value){
+                            window.location = 'usuarios';
+                        }
+
+                    });
+                </script>";
+            }
+        }
+    }
+
+    static public function ctrBorrarUsuarios() {
+
+        if (isset($_GET["idUsuario"])) {
+
+            $tabla = "usuarios";
+            $datos = $_GET["idUsuario"];
+
+            $respuesta = ModeloUsuarios::mdlBorrarUsuarios($tabla, $datos);
+
+            if ($respuesta == "ok") {
+                echo "<script>
+                    swall({
+                        type: 'success',
+                        title: 'El usuario ha sido eliminado correctamente',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar',
+                        closeOnConfirm: false
+                    }).then(function(result){
+
+                        if(result.value){
+                            window.location = 'usuarios';
+                        }
+
+                    });
+                </script>";
+            } else {
+                "<script>
+                    swall({
+                        type: 'error',
+                        title: 'El usuario no ha sido eliminado correctamente',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar',
+                        closeOnConfirm: false
+                    }).then(function(result){
+
+                        if(result.value){
+                            window.location = 'usuarios';
+                        }
+
+                    });
+                </script>";
             }
         }
     }

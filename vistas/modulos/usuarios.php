@@ -55,7 +55,8 @@
                               <td>
                               <button class='btn btn-primary btnEditarUsuario' idUsuario=".$valores["id"]." data-toggle='modal' 
                               data-target='#modalEditarUsuarios'>Editar</button>
-                              <button class='btn btn-danger'>Eliminar</button>
+                              <button class='btn btn-danger btnEliminarUsuario' idUsuario=".$valores["id"].">
+                              Eliminar</button>
                               </td>
                             </tr>
                           ";
@@ -205,3 +206,10 @@
       </div>
     </div>
   </div>
+
+
+
+  <?php
+        $crearUsuarios = new ControladorUsuarios();
+        $crearUsuarios -> ctrBorrarUsuarios();
+        ?>
