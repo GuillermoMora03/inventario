@@ -81,8 +81,13 @@ include "modulos/menu.php";
 
 if (isset($_GET["ruta"])) {
   
-  if ($_GET["ruta"] == "usuarios") {
+  if ($_GET["ruta"] == "usuarios" ||
+      $_GET["ruta"] == "categorias"
+
+  ) {
+
     include "modulos/".$_GET["ruta"].".php";
+
   }
 }else{
   include "modulos/inicio/cajas.php";
@@ -99,6 +104,9 @@ if (isset($_GET["ruta"])) {
 <script src="vistas/js/plantilla.js"></script>
 
 <script src="vistas/js/usuarios.js"></script>
+
+<script src="vistas/js/categorias.js"></script>
+
 
 
 </body>
