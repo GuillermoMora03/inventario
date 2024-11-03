@@ -29,6 +29,44 @@
   <link rel="stylesheet" href="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   
 
+  <!-- Librerias javascript -->
+
+  <!-- jQuery 3 -->
+<script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="vistas/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- Bootstrap 3.3.7 -->
+<script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- DataTables -->
+<script src="vistas/bower_components/sweetalert2/dist/sweetalert2.all.js"></script>
+<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<!-- Morris.js charts -->
+<script src="vistas/bower_components/raphael/raphael.min.js"></script>
+<script src="vistas/bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="vistas/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+<!-- jQuery Knob Chart -->
+<script src="vistas/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="vistas/bower_components/moment/min/moment.min.js"></script>
+<script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="vistas/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="vistas/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="vistas/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="vistas/dist/js/demo.js"></script>
+
+
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -57,43 +95,6 @@ if (isset($_GET["ruta"])) {
   
 </div>
 <!-- ./wrapper -->
-
-<!-- jQuery 3 -->
-<script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="vistas/bower_components/jquery-ui/jquery-ui.min.js"></script>
-
-<!-- Bootstrap 3.3.7 -->
-<script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- DataTables -->
-<script src="vistas/bower_components/sweetalert2/dist/sweetalert2.all.js"></script>
-<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
-<!-- Morris.js charts -->
-<script src="vistas/bower_components/raphael/raphael.min.js"></script>
-<script src="vistas/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="vistas/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-
-<!-- jQuery Knob Chart -->
-<script src="vistas/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="vistas/bower_components/moment/min/moment.min.js"></script>
-<script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
-<script src="vistas/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="vistas/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="vistas/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="vistas/dist/js/demo.js"></script>
-
 
 <script src="vistas/js/plantilla.js"></script>
 

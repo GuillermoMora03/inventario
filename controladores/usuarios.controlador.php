@@ -23,7 +23,7 @@ class ControladorUsuarios {
 
             if ($respuesta == "ok") {
                 echo "<script>
-                swall({
+                swal({
                     type: 'success',
                     title: 'El usuario ha sido guardado correctamente',
                     showConfirmButton: true,
@@ -39,7 +39,7 @@ class ControladorUsuarios {
             </script>";
             } else {
                 echo "<script>
-                    swall({
+                    swal({
                         type: 'error',
                         title: 'El usuario no ha sido guardado correctamente',
                         showConfirmButton: true,
@@ -87,7 +87,7 @@ class ControladorUsuarios {
 
             if ($respuesta == "ok") {
                 echo "<script>
-                    swall({
+                    swal({
                         type: 'success',
                         title: 'El usuario ha sido modificado correctamente',
                         showConfirmButton: true,
@@ -103,7 +103,7 @@ class ControladorUsuarios {
                 </script>";
             } else {
                 echo "<script>
-                    swall({
+                    swal({
                         type: 'error',
                         title: 'El usuario no ha sido modificado correctamente',
                         showConfirmButton: true,
@@ -132,7 +132,7 @@ class ControladorUsuarios {
 
             if ($respuesta == "ok") {
                 echo "<script>
-                    swall({
+                    swal({
                         type: 'success',
                         title: 'El usuario ha sido eliminado correctamente',
                         showConfirmButton: true,
@@ -148,7 +148,7 @@ class ControladorUsuarios {
                 </script>";
             } else {
                 "<script>
-                    swall({
+                    swal({
                         type: 'error',
                         title: 'El usuario no ha sido eliminado correctamente',
                         showConfirmButton: true,
